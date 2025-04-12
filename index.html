@@ -28,128 +28,6 @@
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-  body {
-  margin: 0;
-  padding: 0;
-  background-color: #0f0f1a;
-  color: #ececf1;
-  font-family: 'Söhne', 'Segoe UI', Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Gradiente sutil no fundo */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 15% 50%, rgba(69, 26, 103, 0.13) 0%, transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(138, 43, 226, 0.1) 0%, transparent 33%);
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Estilo para elementos de texto */
-h1, h2, h3, h4, h5, h6 {
-  color: #d9d9e3;
-  font-weight: 600;
-}
-
-p, li, span {
-  color: #ececf1;
-}
-
-/* Links com estilo roxo */
-a {
-  color: #a78bfa;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: #c4b5fd;
-  text-decoration: underline;
-}
-
-/* Estilo para botões semelhantes ao ChatGPT */
-button, .button {
-  background-color: #444654;
-  color: #ececf1;
-  border: 1px solid #565869;
-  border-radius: 4px;
-  padding: 8px 12px;
-  font-size: 14px;
-  transition: background-color 0.2s;
-}
-
-button:hover, .button:hover {
-  background-color: #565869;
-}
-
-/* Estilo para áreas de entrada */
-input, textarea, select {
-  background-color: #212130;
-  border: 1px solid #444654;
-  border-radius: 4px;
-  color: #ececf1;
-  padding: 8px 12px;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: #8b5cf6;
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.25);
-}
-
-/* Barra de rolagem personalizada */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #0f0f1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #444654;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #565869;
-}
-
-/* Cores de destaque */
-.highlight {
-  color: #a78bfa;
-}
-
-/* Cartões ou containers de conteúdo */
-.card, .container {
-  background-color: #1e1e2e;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
-  border: 1px solid #383850;
-}
-
-/* Variáveis de cor para referência */
-:root {
-  --gpt-dark-bg: #0f0f1a;
-  --gpt-card-bg: #1e1e2e;
-  --gpt-border: #383850;
-  --gpt-text: #ececf1;
-  --gpt-heading: #d9d9e3;
-  --gpt-purple-light: #c4b5fd;
-  --gpt-purple: #a78bfa;
-  --gpt-purple-dark: #8b5cf6;
-}
   
         :root {
             --primary: #9C27B0;
@@ -1962,95 +1840,6 @@ body {
                 max-width: 90%;
             }
         }
-    /* Estilos para a barra lateral */
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 100vh;
-  background-color: #1e1e2e;
-  color: #ececf1;
-  padding: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000;
-  overflow-y: auto;
-}
-
-/* Estado oculto da barra lateral */
-#sidebar.hidden {
-  transform: translateX(-100%);
-}
-
-/* Botão para alternar a barra lateral */
-.toggle-sidebar {
-  position: fixed;
-  left: 20px;
-  top: 20px;
-  background-color: #8b5cf6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 12px;
-  cursor: pointer;
-  z-index: 1001;
-  transition: background-color 0.2s;
-}
-
-.toggle-sidebar:hover {
-  background-color: #a78bfa;
-}
-
-/* Quando a barra está visível, o botão fica em outra posição */
-#sidebar:not(.hidden) + .toggle-sidebar {
-  left: 270px;
-}
-
-/* Estilizar o conteúdo dentro da barra lateral */
-#sidebar h2 {
-  color: #d9d9e3;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #444654;
-  padding-bottom: 10px;
-}
-
-#sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-#sidebar ul li {
-  margin-bottom: 10px;
-}
-
-#sidebar ul li a {
-  color: #c4b5fd;
-  text-decoration: none;
-  display: block;
-  padding: 8px 10px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-#sidebar ul li a:hover {
-  background-color: #2d2d3a;
-  color: #a78bfa;
-}
-
-/* Ajuste para o conteúdo principal */
-.main-content {
-  margin-left: 0;
-  transition: margin-left 0.3s ease-in-out;
-  padding: 20px;
-}
-
-/* Quando a barra lateral está visível, afasta o conteúdo */
-#sidebar:not(.hidden) ~ .main-content {
-  margin-left: 250px;
-}
     </style>
 </head>
 <body>
@@ -2136,7 +1925,10 @@ body {
                     <i class="fas fa-certificate"></i>
                     <span>Obter Verificação</span>
                 </div>
-               
+                <div class="menu-item" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Sair</span>
+                </div>
             </div>
         </div>
 
@@ -2193,16 +1985,12 @@ body {
                     <input type="text" id="message-text" placeholder="Digite uma mensagem...">
                     <div class="send-btn">
                         <i class="fas fa-paper-plane"></i>
-                    
-                </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   <div class="menu-item" id="logout-btn">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Sair</span>
+
     <!-- Modal de Verificação -->
     <div id="verification-modal" class="modal hidden">
         <div class="modal-content">
@@ -3349,7 +3137,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
- 
   </script>
 
 <style>
